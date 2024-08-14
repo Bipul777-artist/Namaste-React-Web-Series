@@ -1,0 +1,112 @@
+Q1. What is `NPM?
+
+NPM is a default package manager for JS's runtime Node.js
+npm install <package> -> This can be used to install packages using npm (Only if the package are globally available).
+	NPM consists of two parts 
+	
+A) A CLI tool for publishing and downloading packages
+B) An Online repo to host JS packages
+
+NPM is installed with Node.js The name npm does not stands for Node Package Manager, we can call it "No Problem Man".
+
+Package.json -> All npm packages are defined in files called package.json, the contents of 
+package.json must be written in JSON. This is created when "npm init" is run
+to initialise the a JS/Node.js project, with basic metadata provided like
+name, version, desc, license.
+**NPM can also manage dependencies, it can install all the dependencies in
+line and dependencies also are stored in package.json.
+**Package-lock.json -> This file describes the exact version of dependenies used in
+a npm JS Project. This is a really important file and we should never save it in 
+.gitignore file else the app will run on your device and not on prod.
+NPM can be very big file most of the times hence we can use "--production flag". By
+attaching the above flag in the "npm install command", we'll only install packages
+from dependencies, thus drastically reducing the size of node_modules to whatver is 
+only necessary. 
+
+Q2. Module Bundlers and Why do we need it?
+Libraries in our project may have dependencies, which may have it's own dependencies.A
+bundler creates a dependency graph to keep track of all this, all we need to do is to
+specify the entry point of our project. 
+*Bundler also created a similar process for 
+other files such as CSS by combining all CSS files into one minified file, this increases
+the performance of the app/webpage to a very large extent. 
+Media files are also mapped and bundled together for best performance.
+
+Q3. What is Parcel? Why do we need it?
+Parcel is a bundler, the best thing about it is, Zero Configuration.Parcel optimises media, 
+caches our data while development and compresses our file.
+
+Q4.What is Parcel.cache?
+In Simple terms, parcel needs space to perform all the work it does.
+The parcel.cache folder stores all the info about your project when parcel builds it, so when it re-builds 
+it doesn't have to re-parse and re-analyse everything from scratch. It's a key reason behing Parcel being very
+fast in development mode. We should add this folder to .gitignore file and shouldn't upload .parcelcache to 
+Github.
+
+Q5. What is npx?
+
+NPX comes bundles with NPM.
+NPM -> Manages packages but not very helpful when executing packages.
+NPX -> A tool for executing packages.
+
+If we want to run a package using NPM we need to specify it in package.json file. But for npx
+we can insall package using "npx package-name", whether or not the package is availbale locally
+or globally.
+
+Q6. What is difference between `dependencies` vs `devDependencies?
+The major difference between the two is that devDependencies are modules that are only required 
+during Development while dependencies are module which are also required on runtime.
+
+Q7. What is Tree Shaking?
+Tree Shaking is the concept used for dead code elimination. In modern JS, Bundlers are used to 
+automatically do this, when combining/bundling multiple JS files into single JS file. This is imp. for 
+preparing production ready code.
+
+Q8. Hot Module Reload ?
+HMR adds, exchanges, removes modules without while an app is reloading without a full reload. This hugely 
+improves/optimises the performance of the page.
+		HOW?
+The app asks HMR runtime to check for updates
+The runtimes asynchronously downlods the update and informs the app
+The app asks the runtime to apply the updates
+The runtime synchronously applies the change.
+ We can set up HMR for this whole process to happens automatically. 
+
+Q9. Benefits of Parcel ? Explain three benefits
+Zero Config -> Minimises Media Files -> Optimises the web-app/app -> Caches data while development ->
+Friendlier error logs -> HMR -> Tree Shaking
+
+Tree Shaking - Elimintating dead code or the code that is not being used.
+Optimising Media - Parcel optimies our code as well as the media files, minifying, compresssing them reducing the overall size which enhances the performance of
+our code.
+HMR - Any change we make in our code is reflected synchronously in the webapp without any delay.
+
+Q10. .Gitignore file ?
+This file specifies intentionally untracked file that Git should ignore.
+
+The file which can be created later by GIT or which are too big in size should not be put in GIT.
+We should add Node Modules, .parcel-cache and dist in this file. 
+
+Q11. Difference between package.json and package-lock.json?
+
+	package.json																	package.lock.json
+	
+
+It contains basic information about the project.	It describes the exact tree that was generated to allow subsequent installs to have the identical tree.
+It is mandatory for every project.	              	It is automatically generated for those operations where npm modifies either node_modules tree or package.json.
+It records important metadata about the project.	It allows future devs to install the same dependencies in the project.
+ 
+Q12. Why we should not edit package-lock.json?
+
+It is automatically created file and is not designed to be edited manually. It's purpose is to track the entire tree of dependencies and exact version of 
+each dependency used in the project.
+
+Q13. What is node_modules?
+The node_modules folder contains every installed dependency in your project.
+We should not put this project in Git
+
+Q14. Difference between .package.json and package-lock.json?
+While package.json lists dependencies that tells us the suitable version for our project package-lock.json locks the exact version 
+of package installed. We should push this to GIT instead of node_modules as it is a cleaner representation of our dependencies.
+
+Q.15 Difference between Caret(^) and tilde(~)?
