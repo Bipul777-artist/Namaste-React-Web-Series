@@ -1,0 +1,23 @@
+Q. When and we do we need lazy()?
+
+Ans: We need lazy () when we want to bundle our component in a different js file. By default, parcel bundles all of our code into a single JS file which is perfect when we're building a small web-app with imited number of components however as our app grows or when we have too many components it is smart to separate the components logically into different JS files.
+
+For this we need lazy ().It is a component given to us by "react" and takes in a CB function which has an import function as a parameter with location of our component.
+
+Q. What is suspense? When do we and why do we need suspense?
+
+Ans: Suspense is a componet given to us by "react". When we're lazy loading our componets in a differen js file, if we click on this component it will take some time to load however React does not understands it and tried to load the component very fast and when does not finds it, gives us an error. Suspense solves this issue for us and also provides us an option using "fallback" to display something to the users while the component takes it's time to load.
+
+Q. Why we got this error : A component suspended while responding to synchronous input. This will cause the UI to be replaced with a loading indicator. To fix, updates that suspend should be wrapped with startTransition? How does suspense fix this error?
+
+Ans: Wrap your affected component from Suspense component
+
+Q. Advantages and Dis-advantages of using Code Splitting pattern?
+
+Ans: Code Splitting pattern can be used for bigger/larger web-apps consisting of many numbers of components. The main idea of code-splitting is not only to split code, it is to isolate them and also not to load/execute them unless needed. 
+
+Advantages : High Speed, Browser Caching, Less Code to managed at a time, Better performance
+
+Dis-advantages: Initial Delay in loading,  Complex to configure, Route based splitting.
+
+https://dev.to/thekashey/code-splitting-what-when-and-why-59op
