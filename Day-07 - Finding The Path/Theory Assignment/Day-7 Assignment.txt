@@ -1,0 +1,17 @@
+Q. What would happen if we do console.log(useState())?
+
+Ans -> This would throw an error, useState is a hook function in React used to manage state in functional component. It needs to be called within the body of component function and should not be called directly in console.
+
+Q. How will useEffect behave if we don't have a dependency array?
+Ans-> If we don't add a dependency array, useEffect will be called after every render.
+
+Q. What is the difference between client side routing and server side routing?
+
+Ans -> 
+Client-side routing is a method of routing in which the routing logic is handled on the client-side, typically using JavaScript. When a user clicks on a link or enters a URL in the browser, the JavaScript on the client-side takes over and updates the browser's URL and displays the appropriate content without making a request to the server. This allows for a seamless and fast navigation experience for the user but can also cause issues with search engines and users who have JavaScript disabled.
+
+Server-side routing, on the other hand, is a method of routing in which the routing logic is handled on the server. When a user clicks on a link or enters a URL in the browser, the request is sent to the server, which then returns the appropriate HTML content to the browser. This method of routing is more compatible with search engines and users who have JavaScript disabled, but it can lead to slower navigation and a less seamless experience for the user.
+
+Both methods have their own advantages and disadvantages and the choice of which method to use depends on the specific requirements of the application. For example, if SEO is important for your app, Server-side routing is a good choice while if you want a better user experience, you should use client-side routing
+
+
