@@ -1,0 +1,59 @@
+Q What is Microservice?
+Ans -> It's an architectural style that structures an app as a collection of services that are 
+
+	* Independently deployable
+	* Loosely coupled	* Owned by small team	*Highly maintainable and testable
+
+Q What is monolithic architecture?
+Ans -> Monolithic app are single-tiered, which means multiple components are combined into one large app. If one program component must be updated, other elements may also require rewriting, and the whole app has to be recompiled and tested.
+
+Q. Why do we need UseEffect hook?
+Ans -> UseEffect has two parameters "a callback function" and a "dependency array".
+By using this Hook, you tell React that your component needs to do something after render. React will remember the function you passed, and call it later (as per the Callback function given by us) after performing DOM updates. 
+Placing useEffect inside the component lets us access count state variable right from effect.
+useEffect runs after first render and then runs everytime after every update.
+
+Q. What is a shimmer UI?
+
+Ans ->  Shimmer is a temporary animation placeholder for when the data from the services takes time to get back and we don't want to block rendering the rest of UI.
+
+Q. What is the difference between JS expression and JS statement?
+
+Ans -> At it's simplest terms expressions are evaluated to produce a value. On the other hand, statements are executed to make something happen.
+ All expressions are statements, but not otherwise. We cannot use a statement in place of an expression.
+
+Q. What is conditional rendering give example?
+Ans> Displaying UI as per the user current state.
+For e.g.
+function Greeting(props) {
+  const isLoggedIn = props.isLoggedIn;
+  if (isLoggedIn) {    return <UserGreeting />;  
+}  
+  return <GuestGreeting />;
+}
+const root = ReactDOM.createRoot(document.getElementById('root')); 
+// Try changing to isLoggedIn={true}:
+root.render(<Greeting isLoggedIn={false} />);
+
+Q. Async/Await Functions ?
+Ans -> 
+
+Async :- It allows us to write promise-based code as if it was synchronous and it checks that we are not breaking execeution thread. It operates asynchronously via event loop. Async functions will always return a value(promise). 
+
+Await :- This is used to wait for the promise. It could be used within async block only. It makes the code wait until the promise returns a result. It only makes the async block wait.
+
+Code -- 
+ const getData = aysnc() => {
+	var y = await "Hello World";
+	console.log(y);
+}
+
+console.log(1);
+getData();
+console.log(2);
+
+Output :- 
+1
+2
+Hello World
+P.S ; Here 2 prints before Hello World, this happens due to the usage of await keyboard.
